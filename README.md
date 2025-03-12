@@ -71,7 +71,9 @@ This code reads the potentiometer's value and subsequently determines the quanti
 
 The subsequent GIF image of the module operates as expected and facilitates the sequential control of 32 LEDs with a potentiometer. The potentiometer regulates the illumination rate of the LEDs sequentially, from left to right, row by row. The module is intuitive and can be effortlessly incorporated into your apps.
 
-![Sequential LED Control](./hardware/recources/resized_output.gif)
+<div style="text-align: center;">
+    <img src="./hardware/recources/resized_output.gif" alt="Sequential LED Control">
+</div>
 
 ## License
 
