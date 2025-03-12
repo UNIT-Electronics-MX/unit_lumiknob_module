@@ -6,7 +6,7 @@ The Module Potentiometer Interface SPI MAX7219 32 LED Sequential is a module tha
 
 ## Sequential LED Control
 
-![Sequential LED Control](./recources/schematic.PNG)
+![Sequential LED Control](./hardware/recources/schematic.PNG)
 
 
 ## How to Use
@@ -71,8 +71,7 @@ This code reads the potentiometer's value and subsequently determines the quanti
 
 The subsequent GIF image of the module operates as expected and facilitates the sequential control of 32 LEDs with a potentiometer. The potentiometer regulates the illumination rate of the LEDs sequentially, from left to right, row by row. The module is intuitive and can be effortlessly incorporated into your apps.
 
-![Sequential LED Control](./recources/resized_output.gif)
+![Sequential LED Control](./hardware/recources/resized_output.gif)
 
 ## License
 
-This module is released under the MIT License. You are free to use, modify, and distribute this code as you see fit. See the `LICENSE` file for more information.
