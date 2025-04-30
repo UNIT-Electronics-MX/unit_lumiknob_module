@@ -16,14 +16,14 @@ display.show()
 
 while True:
     pot_value = pot.read()
-    num_leds = int((pot_value / 4095) * 32)
+    num_leds = int((pot_value / 4095) * 32) # Scale to 0-32
 
     display.fill(0)
 
     led_count = 0
     for row in range(8):
         for col in range(8):
-            if led_count < num_leds:
+            if led_count <= num_leds:
                 display.pixel(col, row, 1)
                 led_count += 1
             else:
