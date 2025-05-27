@@ -1,0 +1,81 @@
+name: Build and Deploy Documentation
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-doc:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies (Python + LaTeX + Ghostscript)
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y texlive-latex-extra texlive-fonts-recommended \
+          texlive-lang-english ghostscript
+        pip install -r software/documentation/requirements.txt
+        pip install -r software/getting_started/requirements.txt
+
+
+    - name: Validate README content
+      run: python test_readme.py
+      working-directory: software/documentation
+
+    - name: Generate LaTeX PDF
+      run: python generate_pdf.py
+      working-directory: software/documentation
+
+    - name: Compress PDF with Ghostscript (balanced)
+      run: |
+        original_pdf=$(ls build/*.pdf | head -n1)
+        gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/printer \
+           -dNOPAUSE -dQUIET -dBATCH \
+           -sOutputFile=build/compressed.pdf "$original_pdf"
+        mv build/compressed.pdf build/unit_product_brief.pdf
+      working-directory: software/documentation
+
+    - name: Build Sphinx HTML and PDF
+      working-directory: software/getting_started
+      run: |
+        make clean
+        make pdfx
+
+    #################################################
+    # Copiar todo a docs/ para GitHub Pages
+    #################################################
+    - name: Prepare docs/ directory
+      run: |
+        rm -rf docs
+        mkdir -p docs
+        cp software/documentation/build/unit_product_brief.pdf docs/
+        cp software/getting_started/pdf/latex/*.pdf docs/unit_prdoduct_brief.pdf
+        cp -r software/getting_started/src/build/html/* docs/
+        touch docs/.nojekyll
+
+    #################################################
+    # Publicar en rama main
+    #################################################
+    - name: Commit and push docs/ to main (only on main)
+      if: github.ref == 'refs/heads/main'
+      run: |
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "actions@github.com"
+        git pull origin main
+        git add docs/
+        git commit -m "Deploy full documentation and product brief [skip ci]" || echo "No changes"
+        git push origin main
