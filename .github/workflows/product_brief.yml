@@ -1,4 +1,4 @@
-name: Build and Deploy Documentation
+name: Build LaTeX PDF from README
 
 on:
   push:
@@ -23,14 +23,15 @@ jobs:
       with:
         python-version: '3.10'
 
-    - name: Install dependencies (Python + LaTeX + Ghostscript)
+    - name: Install Python dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r software/documentation/requirements.txt
+
+    - name: Install LaTeX and Ghostscript
       run: |
         sudo apt-get update
-        sudo apt-get install -y texlive-latex-extra texlive-fonts-recommended \
-          texlive-lang-english ghostscript
-        pip install -r software/documentation/requirements.txt
-        pip install -r software/getting_started/requirements.txt
-
+        sudo apt-get install -y texlive-latex-extra texlive-fonts-recommended texlive-lang-english ghostscript
 
     - name: Validate README content
       run: python test_readme.py
@@ -40,7 +41,7 @@ jobs:
       run: python generate_pdf.py
       working-directory: software/documentation
 
-    - name: Compress PDF with Ghostscript (balanced)
+    - name: Compress PDF with Ghostscript (balanced quality)
       run: |
         original_pdf=$(ls build/*.pdf | head -n1)
         gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/printer \
@@ -49,33 +50,28 @@ jobs:
         mv build/compressed.pdf build/unit_product_brief.pdf
       working-directory: software/documentation
 
-    - name: Build Sphinx HTML and PDF
-      working-directory: software/getting_started
-      run: |
-        make clean
-        make pdfx
 
-    #################################################
-    # Copiar todo a docs/ para GitHub Pages
-    #################################################
-    - name: Prepare docs/ directory
+    - name: List final PDF
+      run: ls -lh software/documentation/build
+
+    - name: Scan PDF for secrets
       run: |
-        rm -rf docs
+        if grep -aEi 'AKIA|api[_-]?key|secret|token|Authorization|password' software/documentation/build/*.pdf; then
+          echo "❌ Potential secret detected in PDF"
+          exit 1
+        fi
+
+    - name: Move PDF to root docs/ for GitHub Pages
+      run: |
         mkdir -p docs
         cp software/documentation/build/unit_product_brief.pdf docs/
-        cp software/getting_started/pdf/latex/*.pdf docs/unit_prdoduct_brief.pdf
-        cp -r software/getting_started/src/build/html/* docs/
-        touch docs/.nojekyll
 
-    #################################################
-    # Publicar en rama main
-    #################################################
-    - name: Commit and push docs/ to main (only on main)
+    - name: Commit and push PDF to docs/ (only on main)
       if: github.ref == 'refs/heads/main'
       run: |
         git config --global user.name "GitHub Actions"
         git config --global user.email "actions@github.com"
         git pull origin main
-        git add docs/
-        git commit -m "Deploy full documentation and product brief [skip ci]" || echo "No changes"
+        git add docs/unit_product_brief.pdf
+        git commit -m "Publish compressed PDF [skip ci]" || echo "No changes to commit"
         git push origin main
