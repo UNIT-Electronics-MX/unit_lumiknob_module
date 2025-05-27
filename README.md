@@ -1,4 +1,4 @@
-# Module Potentiometer Interface with SPI-Controlled MAX7219 LED Driver
+# Lumniknob Module 
 
 
 <div align="center">
