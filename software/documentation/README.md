@@ -56,6 +56,16 @@ Its design emphasizes simplicity and reliability—requiring just a few standard
 - Adjustable brightness and patterns via firmware
 - Minimal component footprint for compact enclosures
 
+## Pin & Connector Layout
+
+| Pin  | MCU       | Description                                   |
+|------|-----------|-----------------------------------------------|
+| VCC  | 5V/3.3V   | Power supply input                            |
+| GND  | GND       | Ground reference                              |
+| SIG  | Analog    | Analog input from potentiometer               |
+| CLK  | SPI Clock | Clock line for MAX7219                        |
+| MOSI | SPI Data  | Data line for MAX7219                         |
+| CS   | SPI CS    | Chip select for MAX7219 communication         |
 
 ## Settings
 
@@ -68,15 +78,13 @@ Its design emphasizes simplicity and reliability—requiring just a few standard
 
 ### Supports
 
-
-| Pin  | MCU       | Description                                   |
-|------|-----------|-----------------------------------------------|
-| VCC  | 5V/3.3V   | Power supply input                            |
-| GND  | GND       | Ground reference                              |
-| SIG  | Analog    | Analog input from potentiometer               |
-| CLK  | SPI Clock | Clock line for MAX7219                        |
-| MOSI | SPI Data  | Data line for MAX7219                         |
-| CS   | SPI CS    | Chip select for MAX7219 communication         |
+| Feature             | Description                                          |
+|---------------------|------------------------------------------------------|
+| LED Control         | Up to 32 LEDs driven by analog input                 |
+| Potentiometer Input | Converts analog value to visual LED output           |
+| SPI Communication   | Uses SPI protocol for LED driver control             |
+| Power Supply        | 3.3 V or 5 V input compatibility                     |
+| Microcontroller     | Works with Arduino, STM32, Raspberry Pi, and others  |
 
 ## Block Diagram
 
