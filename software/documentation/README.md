@@ -17,7 +17,7 @@ Edita las secciones respetando el orden, sin eliminar los encabezados.
 
 # cn3165_battery_charger_module
 
-![product](./images/unit_top_ue0051_lumiknob_v_0_0_2.png)
+![product](images/product.png)
 
 ## Introduction
 
@@ -88,11 +88,11 @@ Lumiknob is a simple but powerful module that connects the analog world to digit
 
 ## Block Diagram
 
-![Function Diagram](/images/unit_pinout_ue0051_lumiknob_en_v_0_0_2.png)
+![Function Diagram](images/unit_pinout_ue0051_lumiknob_en_v_0_0_2.png)
 
 ## Dimensions
 
-![Dimensions](/images/unit_dimension_ue0051_lumiknob_v_1_1_0.png)
+![Dimensions](images/unit_dimension_ue0051_lumiknob_v_1_1_0.png)
 
 ## Usage
 
