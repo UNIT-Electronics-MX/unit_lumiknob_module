@@ -1,7 +1,7 @@
 ---
 title: "Lumiknob module"
 version: "1.0"
-modified: "2025-05-02"
+modified: "2025-05-27"
 output: "Lumiknob_module"
 subtitle: "Lumiknob efficiently drives 32 LEDs via a single potentiometer by leveraging SPI communication and the MAX7219 driver. This innovative design enables dynamic, precise lighting in a compact system."
 
@@ -35,7 +35,7 @@ Lumiknob is a simple but powerful module that connects the analog world to digit
 - **Power Supply**: 5 V or 3.3 V (depending on the microcontroller)
 - **LED Driver**: MAX7219
 - **Communication**: SPI interface for data transfer
-- **Potentiometer**: 10 kΩ linear taper
+- **Potentiometer**: 10 k ohm linear taper
 - **LEDs**: Up to 32 individually addressable LEDs
 
 
