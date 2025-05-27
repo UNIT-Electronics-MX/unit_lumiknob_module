@@ -174,16 +174,21 @@ def render_latex(template_path, output_path, replacements):
 
 def compile_pdf(tex_file):
     try:
-        # Ejecutar pdflatex 2 veces para referencias y lastpage
         for _ in range(2):
-            subprocess.run(
+            result = subprocess.run(
                 ['pdflatex', '-interaction=nonstopmode', '-output-directory=build', tex_file],
-                check=True
+                capture_output=True,
+                text=True
             )
+            if result.returncode != 0:
+                print("⚠️ LaTeX compiló con errores:")
+                print(result.stdout)
+                print(result.stderr)
+                # aún así intentamos seguir si el PDF fue generado
+                if not os.path.exists("build/" + os.path.splitext(os.path.basename(tex_file))[0] + ".pdf"):
+                    raise subprocess.CalledProcessError(result.returncode, result.args)
     except subprocess.CalledProcessError as e:
-        print(f"LaTeX compilation failed with exit code {e.returncode}")
-        with open("build/" + os.path.splitext(os.path.basename(tex_file))[0] + ".log") as log:
-            print(log.read())
+        print(f"❌ LaTeX falló con código {e.returncode}")
         raise
 
 
