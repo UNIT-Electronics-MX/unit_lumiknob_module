@@ -1,4 +1,4 @@
-# Lumniknob Module 
+# Lumiknob Module 
 
 
 <div align="center">
