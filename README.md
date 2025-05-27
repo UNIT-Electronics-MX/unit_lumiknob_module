@@ -5,6 +5,7 @@
     <a href="#"><img src="https://img.shields.io/badge/version-1.0-blue.svg" alt="Version"></a>
     <a href="#"><img src="https://img.shields.io/badge/language-Markdown-lightgrey.svg" alt="Language"></a>
     <a href="#"><img src="https://img.shields.io/badge/license-MIT-green.svg" alt="License"></a>
+    <br>
 </div>
 
 
