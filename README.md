@@ -1,5 +1,13 @@
 # Module Potentiometer Interface with SPI-Controlled MAX7219 LED Driver
 
+
+<div style="text-align: center;">
+    <a href="#"><img src="https://img.shields.io/badge/version-1.0-blue.svg" alt="Version"></a>
+    <a href="#"><img src="https://img.shields.io/badge/language-Markdown-lightgrey.svg" alt="Language"></a>
+    <a href="#"><img src="https://img.shields.io/badge/license-MIT-green.svg" alt="License"></a>
+</div>
+
+
 This document describes the functionality and application of the Module Potentiometer Interface designed for SPI-controlled sequential LED activation using the MAX7219. The module enables the sequential control of 32 LEDs via a potentiometer, which modulates the illumination speed.
 
 <p align="center">
@@ -21,12 +29,16 @@ Ensure that the project directory includes the necessary files, such as `max7219
 
 The table below enumerates the microcontroller boards that have been verified with this module:
 
-| Board             | Status              |
-|-------------------|---------------------|
-| Arduino Uno       | Not Tested          |
-| Raspberry Pi Pico | Not Tested          |
-| ESP32C3 SuperMini | Tested and Functional |
-| Pulsar C6         | Tested and Functional |
+<div align="center">
+
+| Board             | Status               |
+|-------------------|----------------------|
+| Arduino Uno       | Not Tested           |
+| Raspberry Pi Pico | Not Tested           |
+| ESP32C3 SuperMini | Tested and Functional|
+| Pulsar C6         | Tested and Functional|
+  
+</div>
 
 ## Example Code
 
