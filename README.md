@@ -92,10 +92,10 @@ The provided GIF demonstrates that the module functions as expected. The potenti
 
 ## Resources
 
-- [Hardware Design Files](hardware/resources/)
+- [Hardware Design Files](hardware/)
 - [Software Documentation](software/documentation/)
 - [Product Brief](docs/unit_lumiknob_module_product_brief.pdf)
-- [Schematic Diagram](hardware/unit_sch_ue0051_lumiknob.pdf)
+- [Schematic Diagram](hardware/unit_sch_v1_1_0_ue0051_lumiknob.pdf)
 
 ## License
 
