@@ -86,9 +86,16 @@ The sample code retrieves the value from the potentiometer and calculates the co
 
 The provided GIF demonstrates that the module functions as expected. The potentiometer effectively regulates the sequential activation rate of 32 LEDs, ensuring smooth operation across the display.
 
-<div style="text-align: center;">
+<div align="center">
     <img src="./hardware/resources/resized_output.gif" alt="Sequential LED Demonstration">
 </div>
+
+## Resources
+
+- [Hardware Design Files](hardware/resources/)
+- [Software Documentation](software/documentation/)
+- [Product Brief](docs/unit_lumiknob_module_product_brief.pdf)
+- [Schematic Diagram](hardware/unit_sch_ue0051_lumiknob.pdf)
 
 ## License
 
