@@ -84,7 +84,8 @@ jobs:
     - name: Move PDF to root docs/ for GitHub Pages
       run: |
         mkdir -p docs
-        cp software/documentation/build/unit_product_brief.pdf docs/
+        cp software/documentation/build/${{ github.event.repository.name }}_product_brief.pdf docs/
+
 
     - name: Commit and push PDF to docs/ (only on main)
       if: github.ref == 'refs/heads/main'
