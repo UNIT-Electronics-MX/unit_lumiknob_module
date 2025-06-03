@@ -41,9 +41,9 @@ jobs:
       run: |
         mkdir -p software/documentation/images
 
-        cp hardware/resource/unit_dimension_*.png software/documentation/images/dimension.png || echo "dimension not found"
-        cp hardware/resource/unit_pinout_*.png software/documentation/images/pinout.png || echo "pinout not found"
-        cp hardware/resource/unit_top_*.png software/documentation/images/top.png || echo "top not found"
+        cp hardware/resources/unit_dimension_*.png software/documentation/images/dimension.png || echo "dimension not found"
+        cp hardware/resources/unit_pinout_*.png software/documentation/images/pinout.png || echo "pinout not found"
+        cp hardware/resources/unit_top_*.png software/documentation/images/top.png || echo "top not found"
 
     - name: Generate LaTeX PDF
       run: python generate_pdf.py
