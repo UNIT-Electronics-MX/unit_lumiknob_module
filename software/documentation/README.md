@@ -15,7 +15,7 @@ Edita las secciones respetando el orden, sin eliminar los encabezados.
 
 # Lumiknob module
 
-![product](images/product.png)
+![product](images/top.png)
 
 ## Introduction
 
@@ -92,7 +92,7 @@ Its design emphasizes simplicity and reliability—requiring just a few standard
 
 ## Dimensions
 
-![Dimensions](images/unit_dimension_ue0051_lumiknob_v_1_1_0.png)
+![Dimensions](images/dimension.png)
 
 ## Usage
 

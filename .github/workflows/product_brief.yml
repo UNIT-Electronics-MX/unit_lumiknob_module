@@ -57,13 +57,17 @@ jobs:
       run: python generate_pdf.py
       working-directory: software/documentation
 
+      
     - name: Compress PDF with Ghostscript (balanced quality)
       run: |
         original_pdf=$(ls build/*.pdf | head -n1)
+        repo_name=${{ github.event.repository.name }}
+        output_name="${repo_name}_product_brief.pdf"
         gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/printer \
            -dNOPAUSE -dQUIET -dBATCH \
            -sOutputFile=build/compressed.pdf "$original_pdf"
-        mv build/compressed.pdf build/unit_product_brief.pdf
+        mv build/compressed.pdf "build/$output_name"
+        echo "PDF final: $output_name"
       working-directory: software/documentation
 
 
