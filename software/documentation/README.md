@@ -88,7 +88,7 @@ Its design emphasizes simplicity and reliability—requiring just a few standard
 
 ## Block Diagram
 
-![Function Diagram](images/unit_pinout_ue0051_lumiknob_en_v_0_0_2.png)
+![Function Diagram](images/pinout.png)
 
 ## Dimensions
 

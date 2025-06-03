@@ -36,6 +36,14 @@ jobs:
     - name: Validate README content
       run: python test_readme.py
       working-directory: software/documentation
+      
+    - name: Copy and rename hardware images for documentation
+      run: |
+        mkdir -p software/documentation/images
+
+        cp hardware/resource/unit_dimension_*.png software/documentation/images/dimension.png || echo "dimension not found"
+        cp hardware/resource/unit_pinout_*.png software/documentation/images/pinout.png || echo "pinout not found"
+        cp hardware/resource/unit_top_*.png software/documentation/images/top.png || echo "top not found"
 
     - name: Generate LaTeX PDF
       run: python generate_pdf.py
@@ -57,7 +65,7 @@ jobs:
     - name: Scan PDF for secrets
       run: |
         if grep -aEi 'AKIA|api[_-]?key|secret|token|Authorization|password' software/documentation/build/*.pdf; then
-          echo "❌ Potential secret detected in PDF"
+          echo " Potential secret detected in PDF"
           exit 1
         fi
 
