@@ -16,7 +16,7 @@
 ## 🔌 Pinout
 
 <div align="center">
-    <a href="#"><img src="resources/v_0_0_2/unit_pinout_v_0_0_2_ue0051_lumiknob_en.png" width="500px"><br/><br/>Pinout</a>
+    <a href="#"><img src="resources/v_0_0_2/unit_pinout_v_0_0_2_ue0051_lumiknob_en.jpg" width="500px"><br/><br/>Pinout</a>
     <br/>
     <br/>
     <br/>
