@@ -15,7 +15,7 @@ Edita las secciones respetando el orden, sin eliminar los encabezados.
 
 # Lumiknob module
 
-![product](images/top.png)
+![product](../../hardware/resources/lumiknob.png)
 
 ## Introduction
 
@@ -88,11 +88,11 @@ Its design emphasizes simplicity and reliability—requiring just a few standard
 
 ## Block Diagram
 
-![Function Diagram](images/pinout.png)
+![Function Diagram](../../hardware/resources/v_0_0_2/unit_pinout_v_0_0_2_ue0051_lumiknob_en.png)
 
 ## Dimensions
 
-![Dimensions](images/dimension.png)
+![Dimensions](../../hardware/resources/v_0_0_1/unit_dimension_ue0051_lumiknob_v_0_0_1.png)
 
 ## Usage
 
