@@ -104,7 +104,7 @@ Works with:
 
 ## Downloads
 
-- [Schematic PDF](docs/schematic.pdf)
+- [Schematic PDF](../../hardware/unit_sch_v1_1_0_ue0051_lumiknob.pdf)
 
 ## Purchase
 

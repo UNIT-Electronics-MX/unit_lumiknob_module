@@ -60,6 +60,6 @@
 
 # References
 
-- [Lumiknob Datasheet]()
+- [Lumiknob Datasheet](../docs/unit_lumiknob_module_product_brief.pdf)
 
 > Important: resources / v_0_0_1 folder has the dimension and topology file, v_0_0_2 folder has the latest version of the pinout 
