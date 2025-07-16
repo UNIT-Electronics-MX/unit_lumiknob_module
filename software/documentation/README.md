@@ -1,6 +1,6 @@
 ---
 title: "Lumiknob module"
-version: "1.0"
+version: "1.1"
 modified: "2025-05-27"
 output: "Lumiknob_module"
 subtitle: "Lumiknob efficiently drives 32 LEDs via a single potentiometer by leveraging SPI communication and the MAX7219 driver. This innovative design enables dynamic, precise lighting in a compact system."
