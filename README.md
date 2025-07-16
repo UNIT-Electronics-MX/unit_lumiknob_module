@@ -11,9 +11,11 @@
 
 This document describes the functionality and application of the Module Potentiometer Interface designed for SPI-controlled sequential LED activation using the MAX7219. The module enables the sequential control of 32 LEDs via a potentiometer, which modulates the illumination speed.
 
-<p align="center">
-  <img src="/hardware/resources/unit_top_ue0051_lumiknob_v_0_0_2.png" width="500">
-</p>
+<div align="center">
+    <a href="hardware/resources/lumiknob.png"><img src="hardware/resources/lumiknob.png" width="500px"><br/>Pinout</a>
+    <br/>
+
+</div>
 
 ## Overview
 
@@ -87,7 +89,7 @@ The sample code retrieves the value from the potentiometer and calculates the co
 The provided GIF demonstrates that the module functions as expected. The potentiometer effectively regulates the sequential activation rate of 32 LEDs, ensuring smooth operation across the display.
 
 <div align="center">
-    <img src="./hardware/resources/resized_output.gif" alt="Sequential LED Demonstration">
+    <img src="./hardware/resources/IMG/resized_output.gif" alt="Sequential LED Demonstration">
 </div>
 
 ## Resources
